@@ -29,7 +29,7 @@
 
 if (document.getElementById && document.childNodes && document.createElement) {
 
-if (window.MathJax) {window.MathJax = {AuthorConfig: window.MathJax}} else {window.MathJax = {}}
+if (window.MathJax) {if (!window.MathJax.isPacked) window.MathJax = {AuthorConfig: window.MathJax}} else {window.MathJax = {}}
 if (!MathJax.Hub) {  // skip if already loaded
   
 MathJax.version = "2.3-beta";
