@@ -1891,10 +1891,8 @@
 
 
 	  var frame = HTMLCSS.Element("span",{
-            id:"MathJax-Color-"+this.spanID+HTMLCSS.idPostfix, isMathJax: true,
-	    style:{display:"inline-block", backgroundColor:values.mathbackground,
-		   width: HTMLCSS.Em(W), height:HTMLCSS.Em(H), verticalAlign: HTMLCSS.Em(D),
-		   marginLeft: HTMLCSS.Em(lW), marginRight: HTMLCSS.Em(rW)}
+            id:strSpanID, isMathJax: true,
+	    style:styleObj
 	  });
           HTMLCSS.setBorders(frame,borders);
           if (bbox.width) {frame.style.width = bbox.width; frame.style.marginRight = "-"+bbox.width}
@@ -1921,7 +1919,7 @@
 	return null;
       },
       HTMLremoveColor: function (marker) {
-        var strSpanID =  "MathJax-Color-" + this.spanID + "-" + ((typeof(marker) === "string")?marker:"") +
+        var strSpanID =  "MathJax-Color-" + this.spanID + ((typeof(marker) === "string")?"-"+marker:"") +
             HTMLCSS.idPostfix;
         var color = document.getElementById(strSpanID);
 	if (color) {color.parentNode.removeChild(color)}
