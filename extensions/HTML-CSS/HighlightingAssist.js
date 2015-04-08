@@ -139,7 +139,7 @@ MathJax.Hub.Highlight =
       };
 
       // type "context" or "word" or custom value matched to highlightNodes call.
-      // style  "outline", "underline", "fg" or "bg"
+      // style  "outline", "underline", "fg" or "bg", or "none" ("" or null count as none)
       // r g b value 0-255
       // returns true if style updated, false otherwise
       this.setHighlightStyle = function(type, style, r, g, b)
@@ -175,7 +175,7 @@ MathJax.Hub.Highlight =
           return false;
         }
 
-        if(style === "")
+        if(style === "" || style === "none")
         {
           delete highlightDataStore[type];
           return true;
